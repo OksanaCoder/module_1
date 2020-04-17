@@ -104,8 +104,8 @@ Write a function "giveMeRandom" which accepts a number n and returns an array co
 
 const giveMeRandom = function(n) {
     let arrWithNums = [];
-    for(i = 0; i < n.length; i++) {
-        return arrWithNums.push(Math.floor(Math.random() * 10)); 
+    for(i = 0; i < n; i++) {
+         arrWithNums.push(Math.floor(Math.random() * 10)); 
     }
     return arrWithNums;
 }
