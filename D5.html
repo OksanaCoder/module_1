@@ -5,7 +5,16 @@
     <meta charset="utf-8">
     <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
     <meta name="ProgId" content="FrontPage.Editor.Document">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;700&display=swap" rel="stylesheet">
   <style>
+    /* * {
+      padding: 0;
+      margin: 0;
+    } */
+    body {
+      background-color: #E88A34;
+      font-family: 'Comic Neue', cursive;
+    }
       h1 {
         color: blue;
         font-size: 20px;
@@ -20,10 +29,11 @@
       }
       a {
         color: #000;
+        text-decoration: none;
       }
       h2 {
         color: #000;
-        background-color: yellow;
+        /* background-color:#EF7F69; */
         padding: 5px;
         font-size: 16px;
       }
@@ -31,11 +41,11 @@
         color: #000;
         font-size: 14px;
       }
-      .invalid {
-        background-color: red;
+      input.invalid {
+        border: 2px dashed red;
       }
-      .valid {
-        background-color: green;
+      input.valid {
+        border: 2px solid black;
       }
       /* #map {
         height: 100px;  
@@ -109,9 +119,10 @@
       <form id="form">
         <h2>Leave your email</h2>
         <p>
-          <input type='email' id="email" /><br>
+          <input type='email' id="email" /><br><br>
           <input type="button" value="submit" id="btn" onclick="saveData()" /><br>
         </p>
+      
     </form>
     </section>
     <!-- EXERCISE 7: 
@@ -142,6 +153,7 @@
             Create a table with the price for the services of the barber shop
         -->
     <section id="prices">
+      <h2>Prices</h2>
       <table style="width: 100%" id="services">
         <tr>
           <th>Service</th>
@@ -171,8 +183,8 @@
     <footer id="footer">
        <div class="info">
          <p>Barber Shop</p>
-         <p class="address">W
-           e are located:<br>
+         <p class="address">
+          We are located:<br>
           336 W 57th St, New York,<br>
           NY 10019, USA</p>
           <p>+80981726329382</p>
