@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HomeWork 5</title>
+    <meta charset="utf-8">
+    <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+    <meta name="ProgId" content="FrontPage.Editor.Document">
+  <style>
+      h1 {
+        color: blue;
+        font-size: 20px;
+        text-align: center;
+      }
+      ul {
+        list-style: none;
+      }
+      ul li {
+        display: inline;
+        margin-right: 5px;
+      }
+      a {
+        color: #000;
+      }
+      h2 {
+        color: #000;
+        background-color: yellow;
+        padding: 5px;
+        font-size: 16px;
+      }
+      h3 {
+        color: #000;
+        font-size: 14px;
+      }
+      .invalid {
+        background-color: red;
+      }
+      .valid {
+        background-color: green;
+      }
+      /* #map {
+        height: 100px;  
+        width: 100%;  
+       } */
+        th, td, tr {
+        border: 1px solid #000;
+        padding: 4px;
+       }
+      /* EXERCISE 2:  
+       h1 Style h1 color, alignment, size as you like it;
+       Style h2 color, alignment, size as you like it;
+       Style page background color as you like it
+       [EXTRA]
+       Set a red-ish color when the input of the forms are invalid
+       Set a ok-ish color when the input of the forms are valid
+    */
+
+    </style>
+  </head>
+  <body>
+    <!-- EXERCISE 11
+       < Add a navbar with the links to the sections>
+        -->
+    <nav>
+      <ul><h3>This is a navbar:</h3>
+        <li><a href="#promotion">Promotion</a></li>
+        <li><a  href="#contacts">Contacts<a></li>
+        <li><a href="#userData">UserData</a></li>
+        <li><a href="#booking">Booking</a></li>
+        <li><a href="#prices">Prices</a></li>
+      </ul>
+    </nav>
+    <!-- EXERCISE 3:
+            Write the main title of the barber shop and a smaller claim.
+        -->
+     <h1 id="title">Barber Shop</h1>
+    <!-- EXERCISE 4: 
+            Write a section in which you explain a current promotion
+        -->
+      <section class="promotion">
+        <h2>Promotion</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Hic eius dolorum ratione necessitatibus debitis amet, 
+          deleniti iure exercitationem minima molestias esse incidunt quo totam 
+          officiis asperiores autem corporis! Quasi, temporibus!</p>
+      </section>
+    <!-- EXERCISE 5: 
+            Write a section with the address of the shop.
+            [OPTIONAL] Link this address to Google Maps page.
+        -->
+     <section class="contacts">
+       <h2>Contacts</h2>
+       <div> 
+        <p>We are located:<br>
+           336 W 57th St, New York, <br>
+           NY 10019, USA
+        </p>
+        <a href="https://www.google.com/maps/place/336+W+57th+St,+New+York,+NY+10019,+%D0%A1%D0%A8%D0%90/data=!4m2!3m1!1s0x89c258585c8ba02f:0xe470121ec17a3e05?sa=X&ved=2ahUKEwjDxt7sh_foAhVJyaYKHdHMBIMQ8gEwAHoECAkQAQ">Click on to search</a>
+      </div>
+       <!-- <div id="map"></div> -->
+     </section>
+    <!-- EXERCISE 6: 
+            Write a "Leave Email" form. 
+            The form must have a field for the Email and a button for the submission of the field itself.
+            The field must accept ONLY valid emails (empty email is not a valid email).
+
+            [OPTIONAL] On submit click, console log the value of the email
+        -->
+    <section id="userData">
+      <form id="form">
+        <h2>Leave your email</h2>
+        <p>
+          <input type='email' id="email" /><br>
+          <input type="button" value="submit" id="btn" onclick="saveData()" /><br>
+        </p>
+    </form>
+    </section>
+    <!-- EXERCISE 7: 
+     
+            Create an "book haircut" form.
+            The form must have:
+            - phone number
+            - date
+            - name
+
+            Phone number and date are mandatory, the name is optional.
+            Create a form with a submit button, ready to be used in a real context.
+            Style it as you like it.
+            [OPTIONAL] On submit click, console log an object containing Phone Number, Date and Name.
+        -->
+      <section id="booking">
+        <form id="bookingForm">
+          <h2>Fill the form to book haitcut</h2>
+          <p>
+           <p><input type="text" id="name"/></p>
+           <p><input type="tel" id="phoneNumber" required/></p>
+           <p><input type="date" id="dataTime" required/></p>
+           <p><input type="submit" value="Submit" id="submit" onclick="submitData()" /></p>
+          </p>
+        </form>
+      </section>
+    <!-- EXERCISE 8: 
+            Create a table with the price for the services of the barber shop
+        -->
+    <section id="prices">
+      <table style="width: 100%" id="services">
+        <tr>
+          <th>Service</th>
+          <th>Price</th>
+        </tr>
+        <tr>
+           <td>Young Gentleman’s</td>
+           <td>$30</td>
+        </tr>
+        <tr>
+          <td>Grey Blending</td>
+          <td>$30</td>
+       </tr>
+       <tr>
+        <td>Iconic Shave:</td>
+        <td>$55</td>
+     </tr>
+      </table>
+    </section>
+    <!-- EXERCISE 9: 
+            Place here a footer including:
+            - Name of the Barber Shop
+            - Address
+            - Phone Number
+            - Email (should be a clickable link)
+        -->
+    <footer id="footer">
+       <div class="info">
+         <p>Barber Shop</p>
+         <p class="address">W
+           e are located:<br>
+          336 W 57th St, New York,<br>
+          NY 10019, USA</p>
+          <p>+80981726329382</p>
+          <a class="email">barber@barber.com</a>
+       </div>
+    </footer>
+    <script>
+      window.onload = function () {
+        console.log('Page loaded!');
+      };
+      // function initMap() {
+      //   // The location of Uluru
+      //   var uluru = {lat: -25.344, lng: 131.036};
+      //   // The map, centered at Uluru
+      //   var map = new google.maps.Map(
+      //       document.getElementById('map'), {zoom: 4, center: uluru});
+      //   // The marker, positioned at Uluru
+      //   var marker = new google.maps.Marker({position: uluru, map: map});
+      // };
+      function saveData() {
+          let emailValue = document.querySelector('#email').value;
+          // document.querySelector('body').appendChild(output);
+          if (!emailValue) {
+            // let message = document.createElement('p');
+            // message.innerText = 'Please, fill out the Email field!';
+            // document.querySelector('#email').appendChild(message);
+            document.querySelector('#email').borderColor = 'red';
+        
+          } else {
+            console.log('Your email is ', emailValue);
+            document.querySelector('#email').value = '';
+          }
+      
+      };
+      let user = [];
+      function submitData() {
+        // let user_data =  {
+        //   name : document.querySelector('#name').value,
+        //   data: Data.now(),
+        //   phoneNumber: document.querySelector('#phoneNumber').value
+        // }
+        let user_data = {};
+        user_data.name = document.querySelector('#name').value;
+        user_data.phoneNumber = document.querySelector('#phoneNumber').value;
+        let dataVal = document.querySelector('#dataTime').value;
+        user_data.data = new Date(dataVal);
+        user.push(user_data);
+      }
+      console.log(user);
+
+        /* EXERCISE 10:
+                    Write on console the size (height and width) of the current browser window
+                    Write on console the size (height and width) of the current page window
+                */
+        const width  = window.innerWidth || document.documentElement.clientWidth || 
+        document.body.clientWidth;
+        const height = window.innerHeight|| document.documentElement.clientHeight|| 
+        document.body.clientHeight;
+
+        console.log(width, height);
+    </script>
+    <!-- <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script> -->
+  </body>
+</html>
