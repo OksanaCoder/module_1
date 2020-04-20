@@ -42,11 +42,12 @@ const boundary = function(N) {
 }
 console.log(boundary(19));
 /* EXERCISE 5
-Write a function "strivify" which accepts a string S. Add to S "Strive" in front of a given string, if the given string begins with "Strive" then return the original string.
+Write a function "strivify" which accepts a string S. Add to S "Strive" in front of a given string, 
+if the given string begins with "Strive" then return the original string.
 */
 
 const strivify = function(S) {
-    // S = 'Strive';
+   
     arr = S.split(' ');
     if (arr[0] == 'Strive') {
         return S;
@@ -57,7 +58,8 @@ const strivify = function(S) {
 console.log(strivify('Strive'));
 
 /* EXERCISE 6
-Write a function "check3and7" which accepts a positive number and check if it is a multiple of 3 or a multiple of 7.
+Write a function "check3and7" which accepts a positive number and check if it 
+is a multiple of 3 or a multiple of 7.
 HINT: Module Operator
 */
 const check3and7 = function(num) {
@@ -71,7 +73,8 @@ console.log(check3and7(27));
 /* WRITE YOUR CODE HERE */
 
 /* EXERCISE 7
-Write a function "reverseString" to reverse programmatically a given string (es.: Strive => evirtS).
+Write a function "reverseString" to reverse programmatically a given string 
+(es.: Strive => evirtS).
 */
 
 const reverseString = function(str) {
@@ -81,7 +84,8 @@ const reverseString = function(str) {
 }
 console.log(reverseString('Strive'));
 /* EXERCISE 8
-Write a function "upperFirst" to capitalize the first letter of each word of a given string passed as parameter
+Write a function "upperFirst" to capitalize the first letter of each word of a given string 
+passed as parameter
 */
 const upperFirst = function(str) {
     let splitedStr = str.toUpperCase().split('');
