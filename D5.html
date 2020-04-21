@@ -208,16 +208,17 @@
           let emailValue = document.querySelector('#email').value;
           // document.querySelector('body').appendChild(output);
           if (!emailValue) {
-            // let message = document.createElement('p');
-            // message.innerText = 'Please, fill out the Email field!';
-            // document.querySelector('#email').appendChild(message);
-            document.querySelector('#email').borderColor = 'red';
+            let message = document.createElement('p');
+            message.innerText = 'Please, fill out the Email field!';
+            document.querySelector('#email').style.borderColor = 'red';
+            document.querySelector('#form').appendChild(message);
+            console.log('Please, fill out the email field!');
         
           } else {
             console.log('Your email is ', emailValue);
+            document.querySelector('#email').style.borderColor = '#000';
             document.querySelector('#email').value = '';
           }
-      
       };
       let user = [];
       function submitData() {
@@ -229,9 +230,11 @@
         let user_data = {};
         user_data.name = document.querySelector('#name').value;
         user_data.phoneNumber = document.querySelector('#phoneNumber').value;
-        let dataVal = document.querySelector('#dataTime').value;
-        user_data.data = new Date(dataVal);
+        user_data.data = document.querySelector('#dataTime').value;
         user.push(user_data);
+        document.querySelector('#name').value = '';
+        document.querySelector('#phoneNumber').value = '';
+        document.querySelector('#dataTime').value = '';
       }
       console.log(user);
 
