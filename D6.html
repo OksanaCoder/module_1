@@ -28,7 +28,7 @@
           childs[i].innerText = 'I was changed!';
         }
       }
-
+  
       /* EXERCISE 4
             Write a function to change the destination of every link to https://www.google.com
             */
@@ -92,20 +92,14 @@
 
       function makeItClickable() {
         var myColors = ['red', 'purple', '#E84751', 'blue', 'orange', '#323643'];
-        // document.getElementsByTagName('h1')[0].addEventListener('click', function(){
-        //   let randomize = Math.floor(Math.random() * myColors.length);
-        //   for(i = 0; i < myColors.length; i++) {
-        //     this.style.color = myColors[randomize];
-        //   }
-        // });
-        let cnt = 0;
 
         document.querySelector('h1').addEventListener('click', function() {
-                if (cnt >= myColors.length) cnt = 0; // reset
-                this.style.color = myColors[cnt];
-                cnt++;
-              });
-            }
+              let randomize = Math.floor(Math.random() * myColors.length);
+              for(i = 0; i < myColors.length; i++) {
+                this.style.color = myColors[randomize];
+              }
+            });
+          }
 
       /* EXERCISE 10
           Create a new welcome alert message when the page successfully loads
@@ -134,7 +128,7 @@
 
     <section>
       <hr />
-
+   
       <ul id="firstList">
         <li>1st</li>
         <li>2nd</li>
