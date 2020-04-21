@@ -55,6 +55,9 @@
         border: 1px solid #000;
         padding: 4px;
        }
+       #message {
+         display: none;
+       }
       /* EXERCISE 2:  
        h1 Style h1 color, alignment, size as you like it;
        Style h2 color, alignment, size as you like it;
@@ -120,6 +123,7 @@
         <h2>Leave your email</h2>
         <p>
           <input type='email' id="email" /><br><br>
+          <span id="message">Please, fill out the email field!</span>
           <input type="button" value="submit" id="btn" onclick="saveData()" /><br>
         </p>
       
@@ -208,13 +212,15 @@
           let emailValue = document.querySelector('#email').value;
           // document.querySelector('body').appendChild(output);
           if (!emailValue) {
-            let message = document.createElement('p');
-            message.innerText = 'Please, fill out the Email field!';
+            document.querySelector('#message').style.display = 'block';
+            // let message = document.createElement('p');
+            // message.innerText = 'Please, fill out the Email field!';
             document.querySelector('#email').style.borderColor = 'red';
-            document.querySelector('#form').appendChild(message);
+            // document.querySelector('#form').appendChild(message);
             console.log('Please, fill out the email field!');
         
           } else {
+            document.querySelector('#message').style.display = 'none';
             console.log('Your email is ', emailValue);
             document.querySelector('#email').style.borderColor = '#000';
             document.querySelector('#email').value = '';
