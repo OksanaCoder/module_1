@@ -95,7 +95,7 @@
         // document.getElementsByTagName('h1')[0].addEventListener('click', function(){
         //   let randomize = Math.floor(Math.random() * myColors.length);
         //   for(i = 0; i < myColors.length; i++) {
-        //     this.style.color = randomize[i];
+        //     this.style.color = myColors[randomize];
         //   }
         // });
         let cnt = 0;
@@ -111,7 +111,9 @@
           Create a new welcome alert message when the page successfully loads
             */
 
-      window.onload = function () {}
+      window.onload = function () {
+        alert('Welcome!');
+      }
 
       /* EXERCISE 11
             Use HTML5 tags to divide sections, headers etc 
@@ -125,12 +127,12 @@
     </style>
   </head>
   <body>
-    <div>
+    <header>
       <h1>This is the title of the page</h1>
       <h2>This is the subtitle of the page</h2>
-    </div>
+    </header>
 
-    <div>
+    <article>
       <hr />
 
       <ul id="firstList">
@@ -150,10 +152,12 @@
       <div>
         <p>This text is just for the exercise</p>
       </div>
-    </div>
-
+    </article>
     <div>
       <p>And this text is just for the exercise too!</p>
     </div>
+    <footer>
+      <h2>This is footer</h2>
+    </footer>
   </body>
 </html>
