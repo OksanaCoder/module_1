@@ -182,6 +182,15 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
          - Break the code into many function for semplicity 
          - Reuse the functions previously created
       */
+
+      function bubbleSort(){
+         let newArray=getTasksAsArray();
+         newArray.sort();
+         let elementList2=document.querySelectorAll(`#myTaskList li`);
+         for (i10=0;i10<newArray.length;i10++){
+            elementList2[i10].innerText=newArray[i10];
+         }
+      } 
    </script>
 </body>
 
