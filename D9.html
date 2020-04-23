@@ -35,12 +35,14 @@ h1, p {
   padding: 30px;
   color: #000;
 }
-
-p a {
-  text-decoration: none;
-  color: #000;
+.box { 
+  /* border: 1px solid #000; */
+  width: 50px;
+  height: 50px;
+  text-align: center;
 }
 
+/* 
 #squarefree {
   font-family: Helvetica;
   margin: 0 auto;
@@ -48,23 +50,16 @@ p a {
   text-align: center;
   font-weight: 600;
   font-size: 15pt;
-}
+} */
 
-#bingotable {
+ #content {
   margin: 0 auto;
   text-align: center;
-  width: 400px;
-  height: 400px;
-  border-collapse: collapse;
-  background: white;
-}
-
-th, td {
-  font-family: Helvetica;
-  margin: 0 auto;
-  text-align: center;
-  border: 3px solid black;
-  width: 20%;
+  /* background: rgb(255, 196, 0); */
+} 
+#content div{
+   display: inline-block;
+   border: 1px solid #000;
 }
   </style>
   </head>
@@ -77,68 +72,63 @@ th, td {
           <h1>BINGO challange</h1>
         </div>
       <div id="content">
-        <table id="bingotable">
-          <tr>
-            <td id="square0"></td>
-            <td id="square1"></td>
-            <td id="square2"></td>
-            <td id="square3"></td>
-            <td id="square4"></td>
-          </tr>
-          <tr>
-            <td id="square5"></td>
-            <td id="square6"></td>
-            <td id="square7"></td>
-            <td id="square8"></td>
-            <td id="square9"></td>
-          </tr>
-          <tr>
-            <td id="square10"></td>
-            <td id="square11"></td>
-            <td id="square12"></td>
-            <td id="square13"></td>
-            <td id="square14"></td>
-          </tr>
-          <tr>
-            <td id="square15"></td>
-            <td id="square16"></td>
-            <td id="square17"></td>
-            <td id="square18"></td>
-            <td id="square19"></td>
-          </tr>
-          <tr>
-            <td id="square20"></td>
-            <td id="square21"></td>
-            <td id="square22"></td>
-            <td id="square23"></td>
-            <td id="square24"></td>
-          </tr>
-        </table>
+         
       </div>
       
-    <p><a href="#" onclick="randomNumbers()">Click here</a> to randomize</p>
-    
+    <input type="button" value="play" onclick="play()"/>
+    <div id="output"></div>
  <script>
 
-    function randomNumbers() {
+  //   function randomNumbers() {
 
-      var n = new Array(25);
-      var nums = new Array(25);
+  //     var n = new Array(25);
+  //     var nums = new Array(25);
        
-      for(i = 0; i< nums.length; i++) {
-        let randomNumber = Math.floor(Math.random() * 70);
-          for (j=0; j<n.length; j++) {
-            if(n[j] == randomNumber) {
-              randomNumber = Math.floor(Math.random() * 70);
-            }
-          }
-          n[i] = randomNumber;
-      }
+  //     for(i = 0; i< nums.length; i++) {
+  //       let randomNumber = Math.floor(Math.random() * 70);
+  //         for (j=0; j<n.length; j++) {
+  //           if(n[j] == randomNumber) {
+  //             randomNumber = Math.floor(Math.random() * 70);
+  //           }
+  //         }
+  //         n[i] = randomNumber;
+  //     }
 
-    for(i = 0; i< n.length; i++) {
-       document.getElementById('square' + i).innerHTML = n[i];
-    }
+  //   for(i = 0; i< n.length; i++) {
+  //      document.getElementById('square' + i).innerHTML = n[i];
+  //   }
+  // }
+window.onload = function() {
+  for (i = 0; i < 76; i++ ){
+      let div = document.createElement('div');
+      div.className = 'box';
+      let h3 = document.createElement('h3');
+      h3.append(i + 1);
+      div.appendChild(h3); 
+      let content = document.getElementById('content');
+      content.appendChild(div);
+
   }
+
+}
+ 
+function play(){
+   
+  let randomNumber = Math.floor(Math.random() * 76) + 1;
+    let output = document.getElementById('output');
+    //  for(i = 0; i < 76; i++) {
+        output.innerText = parseInt(randomNumber);
+    //  }
+
+    let cells = document.querySelectorAll('.box');
+    for(i = 0; i< cells.length; i++) {
+      if (randomNumber==parseInt(cells[i].innerText)) {
+         cells[i].style.backgroundColor = 'red';
+      }
+    }
+    }
+    
+ 
 
 
 
