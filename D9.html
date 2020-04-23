@@ -41,16 +41,41 @@ h1, p {
   height: 50px;
   text-align: center;
 }
-
+#container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
 
  #content {
   margin: 0 auto;
-  text-align: center;
-  /* background: rgb(255, 196, 0); */
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  display: flex;
+  width: 50%;
 } 
 #content div{
-   display: inline-block;
    border: 1px solid #000;
+   
+}
+#btn{ 
+   margin: 50px auto;
+   width: 100px;
+   height: 50px;
+   background-color: rgb(250, 132, 85);
+   border: none;
+   font-size: 16px;
+   font-weight: bold;
+   box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
+   
+}
+#btn:hover {
+   opacity: 0.5;
+   box-shadow: inset 0px 0px 10px 10px rgba(0,0,0,0.5);
+}
+
+#output {
+  margin: 0 auto;
 }
   </style>
   </head>
@@ -66,8 +91,9 @@ h1, p {
          
       </div>
       
-    <input type="button" value="play" onclick="play()"/>
+    <input id="btn" type="button" value="play" onclick="play()"/>
     <div id="output"></div>
+    </div>
  <script>
 
   
@@ -99,6 +125,7 @@ function play(){
          cells[i].style.backgroundColor = 'red';
 
       }
+   
     }
     }
     
