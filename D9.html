@@ -42,15 +42,6 @@ h1, p {
   text-align: center;
 }
 
-/* 
-#squarefree {
-  font-family: Helvetica;
-  margin: 0 auto;
-  background: #5dc4de;
-  text-align: center;
-  font-weight: 600;
-  font-size: 15pt;
-} */
 
  #content {
   margin: 0 auto;
@@ -79,25 +70,7 @@ h1, p {
     <div id="output"></div>
  <script>
 
-  //   function randomNumbers() {
-
-  //     var n = new Array(25);
-  //     var nums = new Array(25);
-       
-  //     for(i = 0; i< nums.length; i++) {
-  //       let randomNumber = Math.floor(Math.random() * 70);
-  //         for (j=0; j<n.length; j++) {
-  //           if(n[j] == randomNumber) {
-  //             randomNumber = Math.floor(Math.random() * 70);
-  //           }
-  //         }
-  //         n[i] = randomNumber;
-  //     }
-
-  //   for(i = 0; i< n.length; i++) {
-  //      document.getElementById('square' + i).innerHTML = n[i];
-  //   }
-  // }
+  
 window.onload = function() {
   for (i = 0; i < 76; i++ ){
       let div = document.createElement('div');
@@ -124,29 +97,12 @@ function play(){
     for(i = 0; i< cells.length; i++) {
       if (randomNumber==parseInt(cells[i].innerText)) {
          cells[i].style.backgroundColor = 'red';
+
       }
     }
     }
     
- 
 
-
-
-
-
-// function newCard() {
-// 	for (var i=0; i<24; i++) {
-// 		setSquare(i);
-// 	}
-// }
-
-
-// function setNums() {
-//     let arr = Math.floor(Math.random() * 25);
-//     for (i = 0; i < arr.length; i ++){
-//       arr[i] = 
-//     }
-//   }
 
  </script>
   </body>
